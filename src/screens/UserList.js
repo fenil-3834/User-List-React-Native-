@@ -1,20 +1,24 @@
-import React from 'react';
-import {Text, Button, View, StyleSheet} from 'react-native';
+import React, {useEffect} from 'react';
+import {Button, View, StyleSheet} from 'react-native';
+import {
+  myFetchGetRequest,
+  myFetchPostRequest,
+  myFetchPutRequest,
+} from './FetchApiRequest';
 
 const UserList = ({navigation}) => {
-  return (
-    <View style={style.container}>
-      <Button
-        title={'Account'}
-        onPress={() => navigation.navigate('UserList')}
-      />
+  useEffect(() => {
+    getData();
+  }, []);
 
-      <Button
-        title={'Profile'}
-        onPress={() => navigation.navigate('Profile')}
-      />
-    </View>
-  );
+  const getData = async () => {
+    // const res = await myFetchGetRequest();
+    // const res = await myFetchPostRequest();
+    const res = await myFetchPutRequest();
+    console.log('data', res);
+  };
+
+  return <></>;
 };
 
 export default UserList;
