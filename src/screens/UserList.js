@@ -8,6 +8,7 @@ import {
   Image,
   Button,
 } from 'react-native';
+import Add from './Add';
 
 const UserList = props => {
   const [isLoading, setLoading] = useState(false);
@@ -54,7 +55,7 @@ const UserList = props => {
         <Text style={styles.Title}>User List</Text>
         <Button
           title={'Add User'}
-          onPress={() => props.navigation.navigate('Login')}
+          onPress={() => props.navigation.navigate('add')}
           style={styles.addBtn}
         />
       </View>
