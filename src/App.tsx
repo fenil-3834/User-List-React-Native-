@@ -62,6 +62,12 @@ function App(): JSX.Element {
             headerShown: false,
           }}
         />
+
+        <stack.Screen
+          name="addUser"
+          component={Add}
+          options={{title: 'Add', headerShown: false}}
+        />
       </stack.Navigator>
     </NavigationContainer>
   );

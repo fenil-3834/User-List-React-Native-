@@ -8,9 +8,12 @@ import {
   Image,
   Button,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import Add from './Add';
 
-const UserList = props => {
+const UserList = () => {
+  const navigation = useNavigation();
+
   const [isLoading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
@@ -55,7 +58,9 @@ const UserList = props => {
         <Text style={styles.Title}>User List</Text>
         <Button
           title={'Add User'}
-          onPress={() => props.navigation.navigate('add')}
+          onPress={() => {
+            navigation.navigate('addUser');
+          }}
           style={styles.addBtn}
         />
       </View>
